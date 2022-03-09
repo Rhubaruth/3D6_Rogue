@@ -1,16 +1,41 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://data/Font/PixelFont_8.tres" type="DynamicFont" id=1]
+[ext_resource path="res://data/Box.png" type="Texture" id=2]
+[ext_resource path="res://Console.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [node name="Console" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.054902, 0.054902, 0.054902, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_right = 192.0
-margin_bottom = 80.0
+anchor_right = 1.0
+anchor_bottom = 0.741
+margin_left = 4.0
+margin_top = 2.0
+margin_bottom = -0.0280075
+custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
+bbcode_text = "random text"
+text = "random text"
+fit_content_height = true
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -19,7 +44,27 @@ __meta__ = {
 anchor_top = 0.741
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 4.0
 margin_top = -0.0280075
+margin_right = -4.0
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+max_length = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="LineEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_right = 4.0
+texture = ExtResource( 2 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
